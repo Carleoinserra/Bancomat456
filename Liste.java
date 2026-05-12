@@ -29,7 +29,7 @@ public class Liste {
 		int scelta = 0;
 		
 		do {
-			System.out.println("1 per aggiungere una persona 2 per stampare 3 per terminare: ");
+			System.out.println("1 per aggiungere una persona 2 per stampare 3 per rimuovere un dipendetne dal nome 0 per terminare: ");
 			scelta = input.nextInt();
 			
 			if (scelta == 1) {
@@ -49,6 +49,30 @@ if (scelta == 2) {
 				System.out.println(lista);
 				
 			}
+
+if (scelta == 3) {
+	System.out.println("Inserisci il nome: ");
+	String nome = input.next();
+	boolean trovato = false;
+	
+	for (int i = 0; i < lista.size(); i++) {
+		
+		if (lista.get(i).nome.equalsIgnoreCase(nome)) {
+			System.out.println("Hai rimosso: " + lista.get(i));
+			lista.remove(lista.get(i));
+			trovato = true;
+			
+		}
+		
+	}
+	
+	if (!trovato) {
+		
+		System.out.println("Dipendente non trovato! ");
+	}
+	
+	
+}
 			
 			
 		}
