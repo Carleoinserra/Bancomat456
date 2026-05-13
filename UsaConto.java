@@ -7,17 +7,13 @@ public class UsaConto {
 		Scanner input = new Scanner(System.in);
 		
 		ContoCorrente c1 = new ContoCorrente(10000, "1234");
-		System.out.println(c1);
+		ContoCorrente c2 = new ContoCorrente(10000, "1235");
 		
-		c1.preleva(2000 , "1235");
-		System.out.println(c1);
 		
-		c1.preleva(10000 , "1234");
-		
-		c1.versa(4000 , "1234");
-		c1.preleva(10000 , "1234");
-		System.out.println(c1);
 		int scelta = 0;
+		Bancomat cc = new Bancomat();
+		cc.aggiungiC(c2);
+		cc.aggiungiC(c1);
 		
 		do {
 			System.out.println("1 per prelevare, 2 per versare, 0 per terminare, 3 per stampare");
@@ -30,7 +26,7 @@ public class UsaConto {
 				
 				System.out.println("Scrivi l'importo da prelevare: ");
 				double importo = input.nextDouble();
-				c1.preleva(importo, pin);
+				cc.prelevaC(pin, importo);
 				
 				
 			}
@@ -41,14 +37,28 @@ public class UsaConto {
 				
 				System.out.println("Scrivi l'importo da versare: ");
 				double importo = input.nextDouble();
-				c1.versa(importo, pin);
+				cc.versaC(pin, importo);
 				
 				
 			}
           
           if (scelta == 3) {
+        	  System.out.println("Inserisci il pin ");
+				String pin = input.next();
         	  
-        	  System.out.println(c1);
+        	 cc.mostraSaldo(pin);
+          }
+          if (scelta == 4) {
+
+				System.out.println("Inserisci il pin ");
+				String pin = input.next();
+				
+				System.out.println("Scrivi il saldo: ");
+				double importo = input.nextDouble();
+				cc.aggiungiC(new ContoCorrente(importo, pin));
+				
+        	  
+        	  
           }
 			
 			

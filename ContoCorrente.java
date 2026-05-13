@@ -3,6 +3,7 @@ public class ContoCorrente {
 	
 	public double saldo;
 	public String pin;
+	
 
 	public ContoCorrente(double saldo, String pin) {
 		super();

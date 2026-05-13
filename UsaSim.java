@@ -9,7 +9,9 @@ public class UsaSim {
 		
 		s1.effettuaChiamata(20);
 		s1.effettuaChiamata(20);
-		s1.effettuaChiamata(50);
+		s1.acquistaPacchettoMinuti(60, 5);
+		s1.ricarica(20);
+		s1.effettuaChiamata(60);
 		System.out.println(s1);
 
 	}
