@@ -29,7 +29,8 @@ public class Liste {
 		int scelta = 0;
 		
 		do {
-			System.out.println("1 per aggiungere una persona 2 per stampare 3 per rimuovere un dipendetne dal nome 0 per terminare: ");
+			System.out.println("1 per aggiungere una persona 2 per stampare 3 per rimuovere un dipendetne dal nome "
+					+ "4 assegnare un bonus in base al nome della persona 0 per terminare: ");
 			scelta = input.nextInt();
 			
 			if (scelta == 1) {
@@ -70,6 +71,68 @@ if (scelta == 3) {
 		
 		System.out.println("Dipendente non trovato! ");
 	}
+	
+	
+}
+
+if (scelta == 4) {
+	System.out.println("Inserisci il nome: ");
+	String nome = input.next();
+	boolean trovato = false;
+	
+	for (int i = 0; i < lista.size(); i++) {
+		
+		if (lista.get(i).nome.equalsIgnoreCase(nome)) {
+			System.out.println("Hai concesso un bonus a: " + lista.get(i));
+			lista.get(i).bonus();
+			trovato = true;
+			
+		}
+		
+	}}
+	if (scelta == 5) {
+		System.out.println("Inserisci il nome: ");
+		String nome = input.next();
+		boolean trovato = false;
+		
+		for (int i = 0; i < lista.size(); i++) {
+			
+			if (lista.get(i).nome.equalsIgnoreCase(nome)) {
+				if (lista.get(i).smart == false) {
+				System.out.println(lista.get(i) + " non lavora in smartworking");}
+				
+				else {
+					System.out.println(lista.get(i) + "lavora in smartworking");}
+				
+				
+				trovato = true;
+				
+			}
+			
+		}}
+		if (scelta == 6) {
+			System.out.println("Inserisci il nome: ");
+			String nome = input.next();
+			boolean trovato = false;
+			
+			for (int i = 0; i < lista.size(); i++) {
+				
+				if (lista.get(i).nome.equalsIgnoreCase(nome)) {
+					
+					lista.get(i).setSmart();
+					
+					
+					trovato = true;
+					
+				}
+				
+			}
+	if (!trovato) {
+		
+		System.out.println("Dipendente non trovato! ");
+	}
+	
+	
 	
 	
 }
